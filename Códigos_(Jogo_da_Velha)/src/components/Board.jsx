@@ -3,7 +3,7 @@ import Square from "./Square";
 
 const Board = () => {
     // Estado para armazenar o estado atual dos quadros no tabuleiro
-    const [squares, setSquares] = useState(array(9).fill(null));
+    const [squares, setSquares] = useState(Array(9).fill(null));
 
     // Estado para determinar se é a vez do jogador "X" ou "O"
     const [xIsNext, setXIsNext] = useState(true);
@@ -30,22 +30,22 @@ const Board = () => {
     // Função para reiniciar o jogo
     const restartGame = () => {
         // Reinicia o estado dos quadrados e define a vez do jogador com "X"
-        serSquares(Array(9).fill(null));
+        setSquares(Array(9).fill(null));
         setXIsNext(true);
     };
 
     // Renderização do componente
     return (
         <div>
-        <div className="status">
-            Status:{" "}
-            {winner ? (
-                // Exibe o vencedor se houver um
-                <p className="winner">O vencedor é: {winner}!</p>
-            ) : (
-                // Exibe o próximo jogador se não houver vencedor
-                `Próximo a jogar: ${xIsNext ? "X" : "O"}`
-            )}
+            <div className="status">
+                Status:{" "}
+                {winner ? (
+                    // Exibe o vencedor se houver um
+                    <p className="winner">O vencedor é: {winner}!</p>
+                ) : (
+                    // Exibe o próximo jogador se não houver vencedor
+                    `Próximo a jogar: ${xIsNext ? "X" : "O"}`
+                )}
             </div>
             {/* Renderização das linhas do tabuleiro com componentes Square */}
             <div className="board-row">
